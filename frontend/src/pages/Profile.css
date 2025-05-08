@@ -1,0 +1,229 @@
+/* Página principal */
+.player-stat-page {
+  background-color: #2E0249; /* Roxo escuro */
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cartão do jogador */
+.player-card {
+  display: flex;
+  align-items: center;
+  background-color: #57007E; /* Roxo mais claro */
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  width: 66%;
+  max-width: 1000px;
+}
+
+.player-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.player-info h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.player-info p {
+  margin: 5px 0 0;
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* Container de Partidas */
+.matches-container {
+  background-color: transparent;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Lista de partidas */
+.matches-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os cartões */
+  gap: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Cartão de partida */
+.match-card {
+  display: flex;
+  align-items: center;
+  background-color: #3A015C; /* Roxo médio */
+  padding: 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 66vw;
+  max-width: 800px;
+  position: relative;
+}
+
+.match-card:hover {
+  background-color: #4B0082;
+  transform: scale(1.02);
+}
+
+/* Imagem do campeão */
+.champion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.champion-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+/* Nome do campeão inicialmente abaixo da imagem */
+.champion-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+}
+
+/* Quando expande, o nome do campeão vai pro topo e some da imagem */
+.match-card.expanded .champion-name {
+  display: none;
+}
+
+.match-card.expanded .champion-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Resumo da partida */
+.match-summary {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.match-result,
+.match-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilização do resumo da partida */
+.match-summary p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.match-summary .result {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.match-summary .kda {
+  color: #FFD700;
+}
+
+.match-summary .duration,
+.match-summary .gold,
+.match-summary .damage {
+  color: #ddd;
+}
+
+/* Expande os detalhes ao clicar */
+.match-card.expanded {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.match-card.expanded .match-summary {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+/* KDA, Vitória, Duração, Ouro e Dano vão pro topo no modo expandido */
+.match-card.expanded .match-result,
+.match-card.expanded .match-stats {
+  width: 100%;
+  text-align: center;
+}
+
+/* Detalhes da partida */
+.match-details {
+  display: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.match-details p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Mostra os detalhes quando expandido */
+.match-card.expanded .match-details {
+  display: block;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .player-card {
+    width: 85%;
+  }
+
+  .match-card {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .player-card,
+  .match-card {
+    width: 95%;
+  }
+
+  .champion-image img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .match-summary {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .match-summary p {
+    font-size: 16px;
+  }
+
+  .match-summary .result {
+    font-size: 18px;
+  }
+}
